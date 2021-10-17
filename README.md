@@ -33,7 +33,7 @@ client.connect("XX.XX.XX.XX", 1883, 30) # Here have the IP address of your MQTT 
 client.loop_forever()
 ```
 Then, you can hear the response when messages are sent to the channel.
-[App Screenshot]
+[subscriber_waiting](https://github.com/JackyWeng526/Support_AI_service_with_MQTT/blob/main/docs/subscriber_waiting.PNG)
 
 ## Publish message
 Connect to the test channel and publish a test message on it.
@@ -52,7 +52,18 @@ msg = json.dumps(payload)
 print(msg)
 client.publish("test/test_message", msg)
 ```
-[App Screenshot]
+[publisher_send_test_msg](https://github.com/JackyWeng526/Support_AI_service_with_MQTT/blob/main/docs/publisher_send_test_msg.PNG)
 
+## Receive and save messages
+When there are messages uploaded to the channel, the subscriber will receive the response in the string type.
+[subscriber_receiving](https://github.com/JackyWeng526/Support_AI_service_with_MQTT/blob/main/docs/subscriber_receiving.PNG)
 
+Use json and pandas libraries to transfer the data ytpe, and then you can save the data or messages easily. 
+```bash
+data = json.loads(msg.payload)
+data_df = pd.DataFrame(data, index=[0])
+```
+
+## Authors
+- [@Jacky Weng](https://github.com/JackyWeng526)
 
