@@ -20,6 +20,7 @@ import json
 
 def on_connect(client, userdata, flags, rc):
     print(F"Connected with result code {str(rc)}")
+    print("Waiting for messages...")
     client.subscribe("test/test_message")
 
 def on_message(client, userdata, msg):
@@ -65,6 +66,11 @@ Use json and pandas libraries to transfer the data ytpe, and then you can save t
 data = json.loads(msg.payload)
 data_df = pd.DataFrame(data, index=[0])
 ```
+![data_example](https://github.com/JackyWeng526/Support_AI_service_with_MQTT/blob/main/docs/data_example.PNG)
+
+With an edge data logger, like Raspberry Pi, the monitored data can be updated to your server or data center constantly through MQTT.
+
+It will be an alternative to transmit data from additional sensors and submeters for your AI project.
 
 ## Authors
 - [@Jacky Weng](https://github.com/JackyWeng526)
