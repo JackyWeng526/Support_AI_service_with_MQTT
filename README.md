@@ -30,7 +30,7 @@ def on_message(client, userdata, msg):
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
-client.connect("XX.XX.XX.XX", 1883, 30) # XX.XX.XX.XX  the IP address of your MQTT server
+client.connect("XX.XX.XX.XX", 1883, 30) # XX.XX.XX.XX is the IP address of your MQTT server
 client.loop_forever()
 ```
 Then, you can hear the response when messages are sent to the channel.
@@ -46,7 +46,7 @@ import json
 import time
 
 client = mqtt.Client()
-client.connect("XX.XX.XX.XX", 1883, 30)
+client.connect("XX.XX.XX.XX", 1883, 30) # XX.XX.XX.XX is the IP address of your MQTT server
 time.sleep(1)
 
 payload = {"Time" : "2021-10-16T16:38:02", "Temperature" : 30.2 , "Humid": 58.0}
