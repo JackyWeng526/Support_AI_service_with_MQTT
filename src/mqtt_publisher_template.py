@@ -6,7 +6,7 @@ import time
 client = mqtt.Client()
 
 # connect(IP, Port, connectionTime)
-client.connect("114.32.111.46", 1883, 30)
+client.connect("Your_IP", 1883, 30)
 
 time.sleep(1)
 
